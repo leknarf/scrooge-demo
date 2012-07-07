@@ -1,0 +1,12 @@
+{
+    "name": "scrooge_demo"
+  , "version": "0.0.1"
+  , "dependencies": {
+      "scrooge": "0.0.1"
+  }
+  , "author" : {
+      "name": "Andrew Frankel"
+    , "email": "andrew@leknarf.net"
+    , "url": "http://leknarf.net"
+  }
+}
