@@ -1,12 +1,48 @@
 {
-    "name": "scrooge_demo"
-  , "version": "0.0.1"
-  , "dependencies": {
-      "scrooge": "https://github.com/leknarf/scrooge/tarball/npm_prepare"
-  }
-  , "author" : {
-      "name": "Andrew Frankel"
-    , "email": "andrew@leknarf.net"
-    , "url": "http://leknarf.net"
-  }
+	"name": "website.docpad",
+	"version": "0.1.0",
+	"private": true,
+	"description": "A DocPad Skeleton useful for Creating Websites. Includes themes for HTML5 Boiler Plate, Initializr, and Twitter Bootstrap.",
+	"homepage": "https://github.com/bevry/website.docpad",
+	"keywords": [
+		"docpad-skeleton",
+		"docpad",
+		"website",
+		"initializr",
+		"html5 boiler plate",
+		"h5bp",
+		"bootstrap",
+		"twitter bootstrap"
+	],
+    "author": "Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
+    "maintainers": [
+        "Benjamin Lupton <b@lupton.cc> (http://balupton.com)"
+    ],
+    "contributors": [
+        "Benjamin Lupton <b@lupton.cc> (http://balupton.com)"
+    ],
+	"bugs": {
+		"url": "https://github.com/bevry/website.docpad/issues"
+	},
+	"repository" : {
+		"type" : "git",
+		"url" : "http://github.com/bevry/website.docpad.git"
+	},
+	"dependencies": {
+		"docpad": "6.x",
+		"docpad-plugin-cachr": "2.x",
+		"docpad-plugin-cleanurls": "2.x",
+		"docpad-plugin-coffee": "2.x",
+		"docpad-plugin-eco": "2.x",
+		"docpad-plugin-feedr": "2.x",
+		"docpad-plugin-less": "2.x",
+		"docpad-plugin-markdown": "2.x",
+		"docpad-plugin-partials": "2.x",
+		"docpad-plugin-stylus": "2.x",
+		"docpad-plugin-text": "2.x"
+	},
+	"engines" : {
+		"node": ">=0.4.0",
+		"docpad": "6.x"
+	}
 }
