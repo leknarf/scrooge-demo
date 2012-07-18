@@ -1,25 +1,3 @@
-# #####################
-# TODO: clean this up
-`
-$.fn.serializeObject = function()
-{
-    var o = {};
-    var a = this.serializeArray();
-    $.each(a, function() {
-        if (o[this.name] !== undefined) {
-            if (!o[this.name].push) {
-                o[this.name] = [o[this.name]];
-            }
-            o[this.name].push(this.value || '');
-        } else {
-            o[this.name] = this.value || '';
-        }
-    });
-    return o;
-};
-`
-###############
-
 gist = do ->
   # access_token for github user "scrooge-demo"
   _ACCESS_TOKEN = "cd056fe085c2210e24cabcd088be7f9b0babd73e"
@@ -41,23 +19,25 @@ gist = do ->
       error: error
 
   create = (payload) ->
+    console.log "Posting request to github"
+    data = JSON.stringify
+      public: false
+      files:
+        'request.json':
+          content: payload
     $.ajax
       url: "#{GITHUB_URL}#{ACCESS_TOKEN}"
       type: 'POST'
-      data:
-        public: false
-        files:
-          'request.json':
-            content: JSON.stringify(payload)
+      data: data
       success: success
       error: error
 
   success = (response) ->
-    console.log response
+    console.log response.responseText
     return true
 
   error = (response) ->
-    console.log response
+    console.log response.responseText
     return false
 
   exports =
@@ -66,9 +46,9 @@ gist = do ->
     create: create
 
 s3 = (hash) ->
-  S3_URL = "http://scrooge.leknarf.net.s3-website-us-east-1.amazonaws.com/results/"
+  S3_URL = "http://scrooge.leknarf.net/results/"
   SLEEP_INTERVAL = 500 # milliseconds
-  timeout = None # timeout object
+  timeout = null # timeout object
 
   poll = ->
     $.ajax
